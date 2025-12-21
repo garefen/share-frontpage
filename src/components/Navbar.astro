@@ -1,0 +1,24 @@
+---
+import '../styles/navbar.scss';
+import logoWhite from '../assets/logoWhite.svg';
+---
+
+<div class="navbar">
+    <img src={logoWhite.src} alt="Logo" class="navbar__logo" />
+    <a href="https://app.ushare.com.br" class="navbar__cta">Começar Agora</a>
+</div>
+
+<script>
+    const navbar = document.querySelector('.navbar') as HTMLElement;
+
+    const handleScroll = () => {
+        if (window.scrollY > 100) {
+            navbar.classList.add('navbar--shown');
+        } else {
+            navbar.classList.remove('navbar--shown');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+</script>

@@ -1,0 +1,44 @@
+@use './colors.scss' as *;
+
+.hero {
+    text-align: center;
+    padding: 70px 0 150px;
+    background-color: $background-color;
+
+    &__title {
+        color: $primary-color;
+        font-size: 64px;
+        font-weight: 500;
+        margin: 80px auto 40px;
+        max-width: 700px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 36px;
+        }
+    }
+
+    &__description {
+        color: $primary-color;
+        font-size: 24px;
+        margin: 0 auto;
+        max-width: 700px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 18px;
+        }
+    }
+
+    &__cta {
+        border: none;
+        border-radius: 1000px;
+        background-color: $primary-color;
+        color: #fff;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px 24px;
+        text-decoration: none;
+        max-width: fit-content;
+        margin: 45px auto 0;
+    }
+}

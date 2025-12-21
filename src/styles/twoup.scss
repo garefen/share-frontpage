@@ -1,0 +1,28 @@
+@use './colors.scss' as *;
+
+.twoup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding : 90px 0;
+
+    &__container {
+        color: $primary-color;
+        max-width: 600px;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 50px !important;
+        padding-top: 50px !important;
+
+        &__img {
+            width: 180%;
+            max-width: 250px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+---
+import '../styles/expanded.scss';
+---
+
+<div class="expanded">
+	<div class="expanded__container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur sed arcu pretium facilisis. Etiam risus nunc, eleifend ac neque ut.
+    </div>
+    <div class="expanded__background"></div>
+</div>
+
+<!-- <script>
+  interface ExpandedElement extends HTMLElement {
+    dataset: DOMStringMap;
+  }
+
+  const expanded = document.querySelector('.expanded') as ExpandedElement;
+  const background = expanded?.querySelector('.expanded__background') as HTMLElement;
+
+  if (expanded && background) {
+    const handleScroll = () => {
+      const rect = expanded.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const triggerTop = viewportHeight * 0.2;
+      const triggerBottom = viewportHeight * 0.8;
+
+      console.log('triggerTop', triggerTop);
+
+      // Calculate progress: 0 when element is at 20% top, 1 when at 20% bottom
+      const elementCenter = rect.top + rect.height / 2;
+      const progress = Math.max(0, Math.min(1, (triggerBottom - elementCenter) / (triggerBottom - triggerTop)));
+
+      // Update width from 0% to 100%
+      const width = progress * 100;
+      background.style.width = `${width}%`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial call
+  }
+</script> -->
