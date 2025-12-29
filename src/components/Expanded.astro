@@ -9,6 +9,36 @@ import '../styles/expanded.scss';
     <div class="expanded__background"></div>
 </div>
 
+<script>
+  const background = document?.querySelector('.expanded__background') as HTMLElement
+
+  if (background) {
+    const handleScroll = () => {
+        const rect = background.getBoundingClientRect();
+        const top = rect.top;
+        const bottom = rect.bottom;
+        const viewportHeight = window.innerHeight;
+        const triggerThreshold = viewportHeight * 0.7;
+        const triggerRelease = viewportHeight * 0.2;
+
+        if (top < triggerThreshold && bottom > triggerRelease) {
+          background.classList.add('expanded__background--expand');
+        } else {
+          background.classList.remove('expanded__background--expand');
+        }
+  
+        // // Calculate progress: 0 when element is at 20% top, 1 when at 20% bottom
+        // const elementCenter = rect.top + rect.height / 2;
+        // const progress = Math.max(0, Math.min(1, (triggerBottom - elementCenter) / (triggerBottom - triggerTop)));
+  
+        // // Update width from 0% to 100%
+        // const width = progress * 100;
+        // background.style.width = `${width}%`;
+      };
+      window.addEventListener('scroll', handleScroll);
+  }
+</script>
+
 <!-- <script>
   interface ExpandedElement extends HTMLElement {
     dataset: DOMStringMap;

@@ -9,24 +9,35 @@
 
     &__container {
         max-width: 600px;
-        font-size: 24px;
-        font-weight: 500;
         z-index: 1;
         text-align: center;
         color: white;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;
     }
 
     &__background {
         background: $primary-color;
         position: absolute;
         inset: 0;
-        width: 100%;
+        width: 80%;
         height: 100%;
         z-index: 0;
         transition: border-radius .3s ease-in-out, width .3s ease-in-out;
         padding: 0 28px;
-        border-radius: 0;
+        border-radius: 24px;
         margin: 0 auto;
+
+        @media screen and (max-width: 600px) {
+            border-radius: 0;
+            width: 100%;
+        }
+
+        &--expand {
+            border-radius: 0;
+            width: 100%;
+        }
     }
 
     @media screen and (max-width: 600px) {
